@@ -23,7 +23,7 @@ jobs:
       - name: compile Go
         run: |
           cd src
-          go build -o bin/main
+          go build -o bin/main main.go
 
       - name: Test and run the build application
         run: ./bin/main

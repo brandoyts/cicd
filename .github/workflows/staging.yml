@@ -21,9 +21,7 @@ jobs:
         run: go version
 
       - name: compile Go
-        run: |
-          cd src
-          go build -o bin/main main.go
+        run: go build -o bin/main ./src/main.go
 
       - name: Test and run the build application
         run: ./bin/main

@@ -19,3 +19,11 @@ jobs:
 
       - name: Verify Go installation
         run: go version
+
+      - name: compile Go
+        run: |
+          cd src
+          go build -o bin/main
+
+      - name: Test and run the build application
+        run: ./bin/main

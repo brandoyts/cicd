@@ -8,7 +8,8 @@ RUN go mod download
 
 COPY . .
 
-RUN go build -o bin/main ./src/main.go
+# Build a static binary (important!)
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o bin/main ./src/main.go
 
 # Final image
 FROM gcr.io/distroless/base-debian11
@@ -17,4 +18,4 @@ WORKDIR /app
 
 COPY --from=builder /app/bin/main .
 
-CMD ["app/main"]
+CMD ["/app/main"]

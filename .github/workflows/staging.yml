@@ -20,6 +20,9 @@ jobs:
       - name: Verify Go installation
         run: go version
 
+      - name: Run Tests
+        run: go test ./src
+
       - name: compile Go
         run: go build -o bin/main ./src/main.go
 

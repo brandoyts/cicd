@@ -12,8 +12,8 @@ jobs:
       - name: Checkout the code
         uses: actions/checkout@v4
 
-      - name: Setup GoLang
-        uses: actions/setup-go@v5
-        with:
-          go-version: "1.21.1"
-        run: go version
+      # - name: gogogo
+      #   uses: actions/setup-go@v5
+      #   with:
+      #     go-version: "1.21.1"
+      #   run: go version
